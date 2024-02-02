@@ -29,7 +29,7 @@ function Login() {
 
 
     return (
-        <div className="container">
+        <div className="container page">
             <h3 className="text-center mb-5"> LOGINNN </h3>
 
 
