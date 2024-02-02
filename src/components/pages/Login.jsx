@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { loginService } from "../../services/Auth.service";
 
 function Login() {
 
@@ -14,10 +15,17 @@ function Login() {
         })
     }
 
+   
     const enviarDatos = (event) => {
         event.preventDefault();
         console.log(formulario);
-    }
+        
+        loginService(formulario)
+        .then(response => {
+            console.log(response);
+        }).catch(error => {
+            console.log(error);
+        }) }
 
 
     return (
@@ -38,16 +46,16 @@ function Login() {
                 </div>
 
                 <div className="form-floating">
-                    <input type="password" 
-                    className="form-control" 
-                    id="password floatingPassword" 
-                    name="password"
-                    onChange={handleInputChange}
-                    placeholder="Password"
-                    value={formulario.password} />
+                    <input type="password"
+                        className="form-control"
+                        id="password floatingPassword"
+                        name="password"
+                        onChange={handleInputChange}
+                        placeholder="Password"
+                        value={formulario.password} />
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
-<br />
+                <br />
                 <button type="submit" className="btn btn-primary">Entrar</button>
             </form>
 
