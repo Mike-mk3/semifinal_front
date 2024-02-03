@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { loginService } from "../../services/Auth.service";
-import { jwtDecode } from "jwt-decode";
 import { useAuth } from '../context/AuthContext';
 
 function Login() {

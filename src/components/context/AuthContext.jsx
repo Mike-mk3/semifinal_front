@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
 
@@ -12,7 +13,11 @@ const AuthProvider = ({ children }) => {
     });
 
     const fnLogin = (token) => {
-        console.log(token);
+        const tokenDecoded = jwtDecode(token);
+        if (tokenDecoded){
+            setIsLogged(true);
+            setUser(tokenDecoded);
+        }
     }
 
 
