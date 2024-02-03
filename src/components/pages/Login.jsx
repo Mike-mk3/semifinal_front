@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { loginService } from "../../services/Auth.service";
+import { jwtDecode } from "jwt-decode";
+import { useAuth } from '../context/AuthContext';
 
 function Login() {
+
+    const { fnLogin } = useAuth();
 
     const [formulario, setFormulario] = useState({
         email: '',
@@ -22,7 +26,8 @@ function Login() {
         
         loginService(formulario)
         .then(response => {
-            console.log(response);
+            const token = response.data.data;
+            fnLogin(token);
         }).catch(error => {
             console.log(error);
         }) }

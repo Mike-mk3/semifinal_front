@@ -3,3 +3,11 @@
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
+
+
+a.active {
+    font-weight: bold !important;
+    background-color: rgb(128, 131, 129);
+    border-radius: 20%;
+    color: rgb(2, 175, 255) !important;
+}
