@@ -17,15 +17,29 @@ const AuthProvider = ({ children }) => {
         if (tokenDecoded){
             setIsLogged(true);
             setUser(tokenDecoded);
+            window.localStorage.setItem(import.meta.env.VITE_TKN_NAME, token)
         }
     }
 
     const fnLogout = () => {
         console.log("entro al log_out");
+        setIsLogged(false);
+        setUser({
+            full_name: '',
+            email: '',
+        });
+        window.localStorage.removeItem(import.meta.env.VITE_TKN_NAME);
         }
 
     useEffect (() => {
         console.log("entro a recargar la pg????");
+        const tknFromStorage = window.localStorage.getItem(import.meta.env.VITE_TKN_NAME);
+        if (tknFromStorage) {
+            console.log("hay una sesion correcta");
+            fnLogin(tknFromStorage);
+        } else {
+            console.log ("sesion incorrecta");
+        }
 }, []);
 
 

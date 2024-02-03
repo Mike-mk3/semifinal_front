@@ -1,5 +1,11 @@
 function Checkout() {
-    return ( <h2>pagina de CHECKOUT</h2> );
+    return ( 
+        <>
+        <div className="container page">
+            <h2>pagina de CHECKOUT</h2>
+        </div>
+    </>
+     );
 }
 
 export default Checkout;
