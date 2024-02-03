@@ -26,7 +26,7 @@ function AppRouter() {
                 <Route path="login" element={<Login />} />
                 <Route path="perfil" element={<Perfil />} />
                 <Route path="productos" element={<ListaProductos />} />
-                <Route path="producto" element={<Producto />} />
+                <Route path="producto/:id" element={<Producto />} />
             </Routes>
         </>
     );
