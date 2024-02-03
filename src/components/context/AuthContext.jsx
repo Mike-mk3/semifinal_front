@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
@@ -20,9 +20,20 @@ const AuthProvider = ({ children }) => {
         }
     }
 
+    const fnLogout = () => {
+        console.log("entro al log_out");
+        }
+
+    useEffect (() => {
+        console.log("entro a recargar la pg????");
+}, []);
+
+
+
+
 
     return (
-        <AuthContext.Provider value={{ user, setUser, isLogged, fnLogin }}>
+        <AuthContext.Provider value={{ user, setUser, isLogged, fnLogin, fnLogout }}>
             {children}
         </AuthContext.Provider>
     );
