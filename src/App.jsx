@@ -2,6 +2,7 @@ import './App.css'
 import AppRouter from './routes/AppRouter'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <AppRouter/>
       <Footer />
+      <Toaster />
     </>
   )
 }

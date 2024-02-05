@@ -8,5 +8,10 @@ const getProducts = async () => {
 };
 
 
+const getProduct = async (id) => {
+    const response = await axios.get(`${WS_PATH}/products?id=${id}`);
+    return response.data;
+};
 
-export {getProducts};
+
+export {getProducts, getProduct};
