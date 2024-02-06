@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter>
       <AuthProvider>
-      <PayPalScriptProvider options={{ clientId:  import.meta.env.VITE_PAYPAL_ID }}>
+      <PayPalScriptProvider options={{ clientId: import.meta.env.VITE_PAYPAL_ID }}>
         <App />
         </PayPalScriptProvider>
       </AuthProvider>
