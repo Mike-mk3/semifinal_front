@@ -2,7 +2,11 @@ function Home() {
     return (
         <>
             <div className="container page">
-                <h2>pagina de HOME</h2>
+                <>
+                
+                <h1>PAGINA PRICIPAL</h1>
+                
+                </>
             </div>
         </>
     );

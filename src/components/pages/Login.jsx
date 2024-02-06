@@ -34,7 +34,7 @@ function Login() {
 
     return (
         <div className="container page">
-            <h3 className="text-center mb-5"> LOGINNN </h3>
+            <h1 className="text-center mb-5"> LOGIN </h1>
 
 
             <form onSubmit={enviarDatos}>
